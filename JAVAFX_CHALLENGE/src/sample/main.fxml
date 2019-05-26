@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="mainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Contacts">
+            <items>
+              <MenuItem fx:id="menuItemAdd" mnemonicParsing="false" text="Add" onAction="#showAddDialog"/>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="menuItemEdit" mnemonicParsing="false" text="Edit" onAction="#showEditDialog" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="menuItemDelete" mnemonicParsing="false" text="Delete" onAction="#showDeleteDialog"/>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TableView fx:id="contactTableView" prefHeight="375.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn prefWidth="75.0" text="First Name">
+               <cellValueFactory>
+                   <PropertyValueFactory property="firstName" />
+               </cellValueFactory>
+          </TableColumn>
+
+          <TableColumn prefWidth="75.0" text="Last Name">
+            <cellValueFactory>
+                <PropertyValueFactory property="lastName" />
+            </cellValueFactory>
+          </TableColumn>
+
+
+            <TableColumn prefWidth="75.0" text="Phone">
+                <cellValueFactory>
+                    <PropertyValueFactory property="phoneNumber" />
+                </cellValueFactory>
+            </TableColumn>
+
+
+            <TableColumn prefWidth="68.0" text="Notes">
+                <cellValueFactory>
+                    <PropertyValueFactory property="notes" />
+                </cellValueFactory>
+            </TableColumn>
+
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </center>
+</BorderPane>
